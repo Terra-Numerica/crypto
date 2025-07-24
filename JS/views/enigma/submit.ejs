@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Résultat du Décodage</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/fontawesome/css/all.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/decode">Enigma</a></li>
+            <li><a href="/mdp">Analyse Frequentielle</a></li>
+        </ul>
+    </nav>
+    <div id="page">
+        <video width="400" height="400" controls autoplay loop muted>
+            <source src="/video/Enigma.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la balise vidéo.
+        </video>
+        <div class="main">
+            <a class="button" href="/decode"><i class="fa-solid fa-circle-arrow-up"></i> Retour</a>
+            <h1>Résultat du Décodage</h1>
+            <div class="result-container">
+                <h2>Message codé :</h2>
+                <p><%= texte %></p>
+                <h2>Message décodé :</h2>
+                <p><%= decoded_message %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

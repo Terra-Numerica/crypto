@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Analyse fréquentielle</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/fontawesome/css/all.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/decode">Enigma</a></li>
+            <li><a href="/mdp" class="in">Analyse Frequentielle</a></li>
+        </ul>
+    </nav>
+
+    <div class="main"> 
+        <form action="/analyseFreq" method="post" class="changeLetter">
+            <div class="letterSwitch">
+                <label>Echanger des lettres : </label><br />
+                <input type="text" id="letter" maxlength="1" name="letter" placeholder="a">
+                <label><i class="fa-solid fa-right-left"></i></label>
+                <input type="text" id="replacement" maxlength="1" name="replacement" placeholder="a">
+            </div>
+            <div class="content_sub">
+                <button type="submit"><i class="fa-regular fa-circle-right"></i> Soumettre</button>
+            </div>
+        </form>
+        <div class="dictionaire"> 
+            <h2>Fréquences calculées :</h2>
+            <table>
+                <% for (const [lettre, freq] of Object.entries(frequence)) { %>
+                    <tr>
+                        <td><%= lettre %></td>
+                        <td><%= freq %> %</td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+        <div class="texte"> 
+            <h2>Résultat de l'analyse :</h2>
+            <p><%= texteDecod %></p>
+
+            <a class="button" href="/analyseFreq"><i class="fa-solid fa-rotate-right"></i> Réinitialiser</a>
+
+            <hr />
+
+            <h2>Texte original :</h2>
+            <p>
+                Inymh ! Rz d'zbyfb lya eyrfkz oyfa mhsa ymzj efdykzozdb nzsaaf y pzrhpzn bhsa kza ozaaytza csags'y k'zbylz efdykz. Ezkfrfbybfhda. Mhsa mhsa pzoydpzj lzsb zbnz gsf mhsa y pfb gsz mhsa pzmfzj bnhsmzn kz rhnnftz pz k'zqyozd pz pzoyfd. Zb ifzd r'zbyfb ohf. Zd zeezb, k'zqyozd zbyfb df lksa df ohfda gsz rz gsz mhsa mzdzj pz eyfnz. Afdrznza ezkfrfbybfhda ysq chszsna, mhsa ymzj phdr ybbzfdb ky dhbz oyqfoykz ! dkk
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

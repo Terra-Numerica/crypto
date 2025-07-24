@@ -1,0 +1,311 @@
+/* Style global */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('/img/enigma.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    color: #ddd;
+}
+
+/* Style de la barre de navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #111;
+    color: white;
+    z-index: 10;
+    padding: 10px 0;
+    box-shadow: 0px 3px 3px #000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0 20px 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #ddd;
+}
+
+.navbar li a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.navbar li a.in {
+    color: #fff;
+}
+
+/* Style du conteneur principal */
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+form.changeLetter {
+    width: 17%;
+    background-color: #111;
+    padding: 25px;
+    height: min-content;
+    box-shadow: 0 0 5px #000;
+    text-align: center;
+}
+
+h2 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-size: 1.2em;
+    color: #02ada9;
+    align-self: flex-start;
+}
+
+/* Style for the text section */
+.texte {
+    background-color: #2b2b2b;
+    color: #ddd;
+    padding: 20px;
+    border-radius: 4px;
+    width: 50%;
+    overflow-y: auto;
+}
+
+/* Style for the sidebar (input box and frequency) */
+.controls {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 4px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Style for the frequency list */
+.dictionaire {
+    background-color: #252525;
+    padding: 15px;
+    width: 15%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dictionaire table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dictionaire td {
+    margin: 5px 0;
+    padding: 3px 0 3px 0;
+    border-bottom: 1px solid #444;
+    min-width: 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+    color: #fff;
+    text-align: center;
+}
+
+/* Style adjustments for form elements */
+label {
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+input[type="text"], select {
+    border: 1px solid #444;
+    display: inline;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+    border-radius: 0;
+    margin: 5px;
+    text-align: center;
+}
+
+select {
+    width: auto;
+    height: auto;
+    padding: 5px;
+}
+
+/* Nouveau style pour les options du select */
+select option {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+}
+
+select option:hover {
+    background-color: #008884;
+}
+
+select:hover {
+    border-color: #666;
+}
+
+select:focus {
+    border-color: #008884;
+}
+
+/* Pour le select de la machine Enigma */
+form.enigma select {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    padding: 8px;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+}
+
+form.enigma select option {
+    padding: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+.content_sub {
+    display: flex;
+    width: 100%;
+    margin-top: 14px;
+    justify-content: center;
+}
+
+button[type="submit"], input[type="submit"], a.button {
+    display: inline-block;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #008884;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 9px 15px 9px 15px;
+    transition: all 0.2s ease;
+}
+
+button[type="submit"]:hover, input[type="submit"]:hover {
+    background-color: #016d6a;
+    padding: 9px 12px 9px 18px;
+}
+
+a.button {
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+a.button:hover {
+    background-color: #016d6a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .texte, .controls {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Enigma specific styles */
+form.enigma {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+form.enigma .main {
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #222;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 0 7px #111;
+    display: block;
+}
+
+form.enigma .main div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+form.enigma input[type="text"] {
+    width: 70%;
+    height: auto;
+} 
+
+/* Styles pour la page de résultat */
+#page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 60px;
+}
+
+#page .main {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 7px #111;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    display: block;
+}
+
+#page h1 {
+    color: #02ada9;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#page p {
+    margin: 15px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#page video {
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#page .button {
+    margin-bottom: 20px;
+} 
