@@ -16,8 +16,19 @@ router.post('/mdp', (req, res) => {
     const motDePasse = "frequence";
 
     if (mdp === motDePasse) {
+        console.log("Mot de passe correct");
         req.session.authenticated = true;
-        res.redirect('/analyseFreq');
+        console.log("Session authenticated:", req.session.authenticated);
+        
+        // Sauvegarder la session avant la redirection
+        req.session.save((err) => {
+            if (err) {
+                console.error("Erreur lors de la sauvegarde de session:", err);
+                return res.status(500).send("Erreur serveur");
+            }
+            console.log("Session sauvegardée avec succès");
+            res.redirect('/analyseFreq');
+        });
     } else {
         res.render('analyseFreq/mdp', {
             error: 'Mot de passe incorrect'
@@ -27,7 +38,11 @@ router.post('/mdp', (req, res) => {
 
 // Page d'analyse fréquentielle (protégée)
 router.get('/analyseFreq', (req, res) => {
+    console.log("Session complète:", req.session);
+    console.log("Session authenticated:", req.session.authenticated);
+    
     if (!req.session.authenticated) {
+        console.log("Utilisateur non authentifié, redirection vers /mdp");
         return res.redirect('/mdp');
     }
 
