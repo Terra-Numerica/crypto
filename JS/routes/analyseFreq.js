@@ -3,7 +3,7 @@ const router = express.Router();
 const { calculateFrequencies, changeLetter, transformToDict } = require('../models/analyseFreq');
 
 // Texte original (comme dans la version Django)
-const texteOriginal = "Inymh ! Rz d'zbyfb lya eyrfkz oyfa mhsa ymzj efdykzozdb nzsaaf y pzrhpzn bhsa kza ozaaytza csags'y k'zbylz efdykz. Ezkfrfbybfhda. Mhsa mhsa pzoydpzj lzsb zbnz gsf mhsa y pfb gsz mhsa pzmfzj bnhsmzn kz rhnnftz pz k'zqyozd pz pzoyfd. Zb ifzd r'zbyfb ohf. Zd zeezb, k'zqyozd zbyfb df lksa df ohfda gsz rz gsz mhsa mzdzj pz eyfnz. Afdrznza ezkfrfbybfhda ysq chszsna, mhsa ymzj phdr ybbzfdb ky dhbz oyqfoykz ! dkk";
+const texteOriginal = "Inymh ! Rz d'zbyfb lya eyrfkz oyfa mhsa ymzj efdykzozdb nzsaaf y pzrhpzn bhsa kza ozaaytza csags'y k'zbylz efdykz. Ezkfrfbybfhda. Mhsa mhsa pzoydpzj lzsb zbnz gsf mhsa y pfb gsz mhsa pzmfzj bnhsmzn kz rhnnftz pz k'zqyozd pz pzoyfd. Zb ifzd r'zbyfb ohf. Zd zeezb, k'zqyozd d'zbyfb df lksa df ohfda gsz rz gsz mhsa mzdzj pz eyfnz. Afdrznza ezkfrfbybfhda ysq chszsna, mhsa ymzj phdr ybbzfdb ky dhbz oyqfoykz !";
 
 // Page de connexion
 router.get('/mdp', (req, res) => {
